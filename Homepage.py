@@ -9,22 +9,24 @@ st.set_page_config (
 st.title("Instrucciones de uso")
 st.sidebar.success("Seleccione una pagina")
 
-
-
-
 st.markdown("""
-## Document Genie: Get instant insights from your Documents
+### Compara el comportamiento de un LLM (Large Language Model) cuando no tiene contexto y cuando le proporcionas uno
 
-This chatbot is built using the Retrieval-Augmented Generation (RAG) framework, leveraging Google's Generative AI model Gemini-PRO. It processes uploaded PDF documents by breaking them down into manageable chunks, creates a searchable vector store, and generates accurate answers to user queries. This advanced approach ensures high-quality, contextually relevant responses for an efficient and effective user experience.
+Este chatbot se desarrollo usando Google's Generative AI model Gemini-PRO, Langchain y Streamlit. El contexto puede ser cualquier documento PDF que se separan en "chunks", se codifican y almacenan en una base de datos vectorial, que luego se consulta para obtener el contexto apropiado para que Gemini genere su mejor respuesta.
 
-### How It Works
 
-Follow these simple steps to interact with the chatbot:
+### Como funciona
 
-1. **Enter Your API Key**: You'll need a Google API key for the chatbot to access Google's Generative AI models. Obtain your API key https://makersuite.google.com/app/apikey.
+Siga las siguientes instruciones:
+            
+1.- Seleccione una opcion del menu lateral.
 
-2. **Upload Your Documents**: The system accepts multiple PDF files at once, analyzing the content to provide comprehensive insights.
+2. **Ingrese su API Key**: Se necesita una clave (API key) para acceder al modelo. Obtenga su API key de https://makersuite.google.com/app/apikey.
 
-3. **Ask a Question**: After processing the documents, ask any question related to the content of your uploaded documents for a precise answer.
-""")
+3. **Haga una pregunta, si seleccionó la primera opción.**
+            
+4. **Si seleccionó la segunda, cargue sus documentos de contexto**: El sistema acepta multiples archivos PDF, revisando su contenido se generan las respuestas correctas.
 
+5. **Haga una pregunta**: Despues de que los documentos se han procesado, haga cualquier pregunta relativa al contenido que se cargó.
+"""
+)

@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 
 st.title("LLM sin contexto")
-api_key = st.text_input("Enter your Google API Key:", type="password", key="api_key_input")
+api_key = st.text_input("Ingese su Google API Key:", type="password", key="api_key_input")
 
 
 def generate_response(input_text):
@@ -18,11 +18,11 @@ def generate_response(input_text):
 
 with st.form("my_form"):
     text = st.text_area(
-        "Enter text:",
+        "Ingrese un texto (Inglés o Español):",
         "Who is Donald Trump?",
     )
-    submitted = st.form_submit_button("Submit")
+    submitted = st.form_submit_button("Enviar")
     if not api_key:
-        st.warning("Please enter your API key!", icon="⚠")
+        st.warning("Ingrese su API Key!", icon="⚠")
     if submitted and api_key:
         generate_response(text)

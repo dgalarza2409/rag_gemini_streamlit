@@ -9,7 +9,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 
 st.title("LLM con contexto (RAG)")
-api_key = st.text_input("Enter your Google API Key:", type="password", key="api_key_input")
+api_key = st.text_input("Ingrese su Google API Key:", type="password", key="api_key_input")
 
 ### ************************************************************************************###
 def get_pdf_text(pdf_docs):
@@ -61,14 +61,14 @@ def main():
         user_input(user_question, api_key)
 
     with st.sidebar:
-        st.title("Menu:")
-        pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True, key="pdf_uploader")
-        if st.button("Submit & Process", key="process_button") and api_key:  # Check if API key is provided before processing
-            with st.spinner("Processing..."):
+        st.title("Menú:")
+        pdf_docs = st.file_uploader("Cargue sus archivos PDF Files y dele Click en el botón Enviar & Procesar", accept_multiple_files=True, key="pdf_uploader")
+        if st.button("Enviar & Procesar", key="process_button") and api_key:  # Check if API key is provided before processing
+            with st.spinner("Procesando..."):
                 raw_text = get_pdf_text(pdf_docs)
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks, api_key)
-                st.success("Done")
+                st.success("Listo")
 
 if __name__ == "__main__":
     main()
